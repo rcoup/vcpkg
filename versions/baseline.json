@@ -3834,7 +3834,7 @@
     },
     "libgit2": {
       "baseline": "1.4.2",
-      "port-version": 0
+      "port-version": 1
     },
     "libgnutls": {
       "baseline": "3.7.8",
