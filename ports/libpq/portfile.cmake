@@ -300,9 +300,11 @@ else()
         OPTIONS
             ${BUILD_OPTS}
         OPTIONS_RELEASE
+            "--with-libraries==${CURRENT_INSTALLED_DIR}/lib:${CURRENT_INSTALLED_DIR}/debug/lib"
             "DYLD_FALLBACK_LIBRARY_PATH=${CURRENT_INSTALLED_DIR}/lib:${CURRENT_INSTALLED_DIR}/debug/lib"
         OPTIONS_DEBUG
             --enable-debug
+            "--with-libraries==${CURRENT_INSTALLED_DIR}/debug/lib:${CURRENT_INSTALLED_DIR}/lib"
             "DYLD_FALLBACK_LIBRARY_PATH=${CURRENT_INSTALLED_DIR}/debug/lib:${CURRENT_INSTALLED_DIR}/lib"
     )
 
