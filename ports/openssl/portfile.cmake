@@ -35,15 +35,17 @@ vcpkg_from_github(
 vcpkg_list(SET CONFIGURE_OPTIONS
     enable-static-engine
     enable-capieng
+    enable-legacy
     no-ssl3
     no-weak-ssl-ciphers
     no-tests
+    no-module
 )
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL "dynamic")
     vcpkg_list(APPEND CONFIGURE_OPTIONS shared)
 else()
-    vcpkg_list(APPEND CONFIGURE_OPTIONS no-shared no-module)
+    vcpkg_list(APPEND CONFIGURE_OPTIONS no-shared)
 endif()
 
 if(NOT "tools" IN_LIST FEATURES)
